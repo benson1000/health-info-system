@@ -109,13 +109,13 @@ Authorization: Bearer <access_token>
 
 📁 Project Structure
 ```graphql
-health_system/
+health-info-system/
 ├── core/
 │   ├── models.py         # Client & Program models
 │   ├── serializers.py    # API serializers
 │   ├── views.py          # API views with permissions
 │   ├── urls.py           # App URL routes
-├── health_system/
+├── cema_health_system/
 │   ├── settings.py       # Project settings
 │   ├── urls.py           # Global URL routes
 ```
@@ -156,27 +156,72 @@ GET /api/clients/{id}/
 - Future enhancements could include audit logs and field-level encryption.
 
 ### Backend Setup
+## Setup and Installation Steps
 
-1. Clone the repository:
+1. **Clone the repository**:
     ```bash
     git clone https://github.com/benson1000/health-info-system.git
     cd health-info-system
     ```
 
-2. Activate Virtual environment:
+2. **Activate Virtual Environment**:
     ```bash
-    source venv/bin/activate or if not installed  
-    python3 -m venv venv then activate
+    source venv/bin/activate
+    ```
+    or if not installed:
+    ```bash
+    python3 -m venv venv
+    source venv/bin/activate
     ```
 
-3. Install dependencies:
+3. **Install dependencies**:
     ```bash
     pip install -r requirements.txt
     ```
 
-4. Start The Django-Project:
+4. **Start The Django Project**:
     ```bash
     django-admin startproject cema_health_system
     ```
 
+5. **Connect to the Database**:
+    - Change directory:
+      ```bash
+      cd cema_health_system
+      ```
+    - Install `psycopg2-binary`:
+      ```bash
+      pip install psycopg2-binary==2.9.10
+      ```
+    - Then connect to your PostgreSQL database by updating your `settings.py`:
+      ```python
+      DATABASES = {
+          'default': {
+              'ENGINE': 'django.db.backends.postgresql',
+              'NAME': 'your_db_name',
+              'USER': 'your_db_user',
+              'PASSWORD': 'your_db_password',
+              'HOST': 'localhost',
+              'PORT': '5432',
+          }
+      }
+      ```
 
+6. **Run Migrations and Apply Migrations**:
+    ```bash
+    python3 manage.py makemigrations
+    python3 manage.py migrate
+    ```
+
+7. **Run the Server**:
+    ```bash
+    python3 manage.py runserver
+    ```
+    - Then open your browser and go to:
+      ```text
+      http://127.0.0.1:8000/
+      ```
+
+---
+
+✅ Now your project should be running successfully!
