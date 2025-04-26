@@ -99,11 +99,11 @@ Authorization: Bearer <access_token>
 
 | Layer | Tech |
 | :--- | :--- |
-| Backend | Django (v4+) |
+| Backend | Django (v5+) |
 | API Framework | Django REST Framework |
 | Auth | JWT (SimpleJWT) |
 | Database | PostgreSQL |
-| Docs/Test | Postman + DRF Browsable UI |
+| Docs/Test | Postman + DRF Browsable UI + Django REST Framework's APITestCase module|
 
 ---
 
@@ -111,6 +111,11 @@ Authorization: Bearer <access_token>
 ```graphql
 health-info-system/
 ├── core/
+    ├──tests/
+    ├── test_models.py      # test Client and Program creation
+│   ├── test_serializers.py # for ClientSerializer and ProgramSerializer validation
+│   ├── test_views.py       # test for Register a client, Enroll a client into Malaria program, Search client, View client profile
+│   ├── test_authentication.py           # for Block unauthenticated users from accessing endpoints
 │   ├── models.py         # Client & Program models
 │   ├── serializers.py    # API serializers
 │   ├── views.py          # API views with permissions
@@ -221,6 +226,14 @@ GET /api/clients/{id}/
       ```text
       http://127.0.0.1:8000/
       ```
+
+    ![Alt text](screenshots/running-code.png)
+
+8. **Run Tests**:
+    ```bash
+    python3 manage.py test
+    ```
+    ![Alt text](screenshots/test-results.png)
 
 ---
 
