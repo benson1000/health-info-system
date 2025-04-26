@@ -21,11 +21,53 @@ The solution provides **RESTful API endpoints** to handle key operations, such a
 - **Exposing Client Data via APIs** for external systems to access and interact with
 
 ## Features
-- **Health Program Management**: Doctors can create health programs such as TB, HIV, and Malaria, and manage the services under each program.
+- **Create a Health Program**: Doctors can create health programs such as TB, HIV, and Malaria, and manage the services under each program.
+- Endpoint: 
+    ```http
+    POST /api/programs/
+    ```
+  - Authentication: Required  
 - **Client Registration**: Register clients with basic details (name, age, etc.) to keep track of their health information.
+- Endpoint: 
+    ```http
+    POST /api/clients/
+    ```
+  - Authentication: Required
 - **Client Enrollment**: Enroll clients in one or more health programs based on their medical needs.
+- Endpoint: 
+    ```http
+    POST /api/clients/{id}/enroll/
+    ```
+  - Example Request Body:
+    ```json
+    {
+      "program_ids": [1, 2]
+    }
+    ```
+  - Authentication: Required
+- **Search Clients by Name**:
+  - Quickly find clients using partial or full names.
+  - Endpoint:
+    ```http
+    GET /api/clients/search/?name=John
+    ```
+  - Authentication: Required
 - **Client Profile Viewing**: View detailed client profiles, including personal information and the programs they are enrolled in.
-- **API Endpoints for Integration**: Expose client information via RESTful APIs for easy integration with other systems or front-end applications.
+- Endpoint:
+    ```http
+    GET /api/clients/{id}/
+    ```
+  - Authentication: Required
+- **REST API Exposure**:
+  - All features are accessible via a RESTful API secured with JWT tokens.
+
+- **JWT-Based Authentication**:
+  - Secure login and token-based session handling for doctors/admins.
+  
+  Obtain Token:
+  ```http
+  POST /api/token/
+  ```
 
 ## Technologies
 - **Python**: The programming language used to build the backend application.
