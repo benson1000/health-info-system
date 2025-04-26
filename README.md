@@ -69,6 +69,20 @@ The solution provides **RESTful API endpoints** to handle key operations, such a
   POST /api/token/
   ```
 
+
+Body:
+```json
+{
+  "username": "benso",
+  "password": "@Benso7130"
+}
+```
+Use Bearer Token:  
+Include the token in request headers:
+```makefile
+Authorization: Bearer <access_token>
+```
+
 ## Technologies
 - **Python**: The programming language used to build the backend application.
 - **Django**: The backend framework used for implementing the core application logic and handling requests.
@@ -81,6 +95,65 @@ The solution provides **RESTful API endpoints** to handle key operations, such a
 ### Prerequisites
 - Python 3.12
 - PostgreSQL
+
+
+| Layer | Tech |
+| :--- | :--- |
+| Backend | Django (v4+) |
+| API Framework | Django REST Framework |
+| Auth | JWT (SimpleJWT) |
+| Database | PostgreSQL |
+| Docs/Test | Postman + DRF Browsable UI |
+
+---
+
+📁 Project Structure
+```graphql
+health_system/
+├── core/
+│   ├── models.py         # Client & Program models
+│   ├── serializers.py    # API serializers
+│   ├── views.py          # API views with permissions
+│   ├── urls.py           # App URL routes
+├── health_system/
+│   ├── settings.py       # Project settings
+│   ├── urls.py           # Global URL routes
+```
+
+---
+
+🧪 API Testing Instructions
+
+Start Server:
+```bash
+python manage.py runserver
+```
+
+Authenticate with JWT:
+```http
+POST /api/token/
+```
+
+Add Token in Postman Headers:
+```makefile
+Authorization: Bearer <access_token>
+```
+
+Use the following endpoints to:
+```http
+GET/POST /api/clients/
+GET/POST /api/programs/
+POST /api/clients/{id}/enroll/
+GET /api/clients/search/?name=...
+GET /api/clients/{id}/
+```
+
+---
+
+🔐 Security Considerations
+- JWT ensures only authenticated users can access or modify records.
+- No sensitive data is exposed in public APIs.
+- Future enhancements could include audit logs and field-level encryption.
 
 ### Backend Setup
 
