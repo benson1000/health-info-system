@@ -9,6 +9,7 @@ This Health Information System is a secure and scalable Django-based application
 - [Technologies](#technologies)
 - [Setup and Installation](#setup-and-installation)
 - [Deployment](#deployment)
+- [Supporting Documents](#supporting documents)
 
 ## Introduction
 This project simulates a **basic health information system** aimed at managing clients and healthcare programs. The primary goal is to allow a healthcare professional (such as a doctor) to efficiently manage client records and enroll them in relevant health programs like **TB**, **HIV**, and **Malaria**.
@@ -238,3 +239,33 @@ GET /api/clients/{id}/
 ---
 
 ✅ Now your project should be running successfully!
+
+## Deployment
+
+The application has been successfully deployed to Render, and users can interact with the API through the Swagger interface.
+
+To interact with the application and explore the API endpoints, visit the following URL:
+
+[https://health-info-system-ncfp.onrender.com/api/swagger/](https://health-info-system-ncfp.onrender.com/api/swagger/)
+
+This URL provides a user-friendly interface for making requests to the API and understanding the available endpoints.
+
+### Database
+
+For this project, I have used **PostgreSQL** as the database for storing application data. Render provides a fully managed PostgreSQL database, ensuring reliability and scalability.
+
+Feel free to explore the deployed application and interact with the endpoints via the Swagger documentation.
+
+
+## Supporting Documents
+
+### Prototype Demonstration Video
+This video demonstrates the prototype of the Health Info System. You can view the video by clicking the link below:
+
+- [Prototype Demonstration Video](documents/official.mp4)
+
+
+### PowerPoint Slide
+You can also view the PowerPoint slide for the presentation of the Health Info System:
+
+- [Health Info System Presentation (PPT)](documents/Health-Information-System.pptx)
