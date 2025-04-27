@@ -262,10 +262,8 @@ Feel free to explore the deployed application and interact with the endpoints vi
 ### Prototype Demonstration Video
 This video demonstrates the prototype of the Health Info System. You can view the video by clicking the link below:
 
-- [Prototype Demonstration Video](documents/official.mp4)
 
 
 ### PowerPoint Slide
 You can also view the PowerPoint slide for the presentation of the Health Info System:
 
-- [Health Info System Presentation (PPT)](documents/Health-Information-System.pptx)
