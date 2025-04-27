@@ -9,7 +9,7 @@ This Health Information System is a secure and scalable Django-based application
 - [Technologies](#technologies)
 - [Setup and Installation](#setup-and-installation)
 - [Deployment](#deployment)
-- [Supporting Documents](#supporting documents)
+- [Supporting Documents](#supporting-documents)
 
 ## Introduction
 This project simulates a **basic health information system** aimed at managing clients and healthcare programs. The primary goal is to allow a healthcare professional (such as a doctor) to efficiently manage client records and enroll them in relevant health programs like **TB**, **HIV**, and **Malaria**.
@@ -262,11 +262,11 @@ Feel free to explore the deployed application and interact with the endpoints vi
 ### Prototype Demonstration Video
 This video demonstrates the prototype of the Health Info System. You can view the video by clicking the link below:
 
-- [Prototype Demonstration Video](documents/official.mp4)
+- [Watch the Prototype Demonstration on YouTube](https://youtu.be/lcx1HM28cC0)
 
 
 ### PowerPoint Slide
 You can also view the PowerPoint slide for the presentation of the Health Info System:
 
-- [Health Info System Presentation (PPT)](documents/Health-Information-System.pptx)
+- [Health Info System Presentation (PPT) on Google Drive](https://docs.google.com/presentation/d/1YgPXEEsbWv19VbtjKntVhORpyYrUT9Zk/edit?usp=drive_link)
 
